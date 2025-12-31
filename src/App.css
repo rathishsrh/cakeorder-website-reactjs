@@ -38,7 +38,16 @@
   transform: scale(1.12);
   box-shadow: 0 0 18px rgba(124, 58, 237, 0.75);
 }
-
+/* ========== 1080px SCREENS ========== */
+@media (max-width: 1080px) {
+  .leftheader img {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--violet-main);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+}
 
 /* Right header */
 .rightheader {
@@ -89,6 +98,54 @@
   border-color: var(--violet-main);
   box-shadow: 0 0 10px rgba(124, 58, 237, 0.45);
 }
+/* ========== 1080px SCREENS ========== */
+@media (max-width: 1080px) {
+  .search-box {
+    padding: 5px 8px;
+  }
+
+  .search-box input {
+    font-size: 18px; /* slightly smaller text */
+  }
+
+  .search-icon,
+  .cake-icon {
+    font-size: 18px; /* smaller icons */
+  }
+}
+/* ========== TABLET SCREENS ========== */
+@media (max-width: 768px) {
+  .search-box {
+    padding: 5px 8px;
+  }
+
+  .search-box input {
+    font-size: 13px; /* slightly smaller text */
+  }
+
+  .search-icon,
+  .cake-icon {
+    font-size: 16px; /* smaller icons */
+  }
+}
+
+/* ========== MOBILE SCREENS ========== */
+@media (max-width: 480px) {
+  .search-box {
+    width: 200px; /* compact width for mobile */
+    padding: 4px 6px;
+  }
+
+  .search-box input {
+    font-size: 13px; /* smaller text */
+  }
+
+  .search-icon,
+  .cake-icon {
+    font-size: 18px; /* smaller icons */
+  }
+}
+
 
 /* ================= MENU ICON ================= */
 .menu {
@@ -122,6 +179,7 @@
   opacity: 1;
   pointer-events: auto;
   box-shadow: -4px 0 25px rgba(124, 58, 237, 0.45);
+  position: fixed;
 }
 
 /* Sidebar content */
@@ -299,8 +357,8 @@
 /* ========== BODY WRAPPER ========== */
 .body {
   background-color: white;
-  /* background-color: var(--bg-dark); */
-  /* color: var(--text-light); */
+  /* background-color: var(--bg-dark);
+  color: var(--text-light); */
   min-height: 100vh;
 }
 
@@ -320,8 +378,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* overflow: hidden;
-  position: relative; */
+  overflow: hidden;
+  position: relative;
 }
 .home div{
   height: 80%;
@@ -411,10 +469,20 @@
 }
 
 /* ========== RESPONSIVE ========== */
+
+/* ========== 1080px SCREENS ========== */
+@media (max-width: 1080px) {
+  .home {
+    height: 35vh;
+    /* background-color: red; */
+  }
+}
 @media (max-width: 768px) {
   .home {
-    height: 70vh;
+    height: 80vh;
+    /* background-color: red; */
   }
+
 
   .cakes,
   .customcakes,
@@ -431,11 +499,12 @@
 
 
 
-@media (max-width: 480px) {
+ @media (max-width: 480px) {
   .home {
+    /* background-color: black; */
     height: 40vh;
+    /* border: 5px solid rgb(247, 2, 2); */
   }
-
   .cakes,
   .customcakes,
   .contact {
@@ -448,13 +517,7 @@
     font-size: 24px;
     text-align: center;
   }
-}
-
-
-
-
-
-
+} 
 
 
 
