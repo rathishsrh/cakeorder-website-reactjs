@@ -1,0 +1,460 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #0f0a1f;
+  --bg-dark-2: #140b2d;
+  --violet-main: #7c3aed;
+  --violet-light: #a78bfa;
+  --text-light: #e5e7eb;
+  --border-soft: rgba(124, 58, 237, 0.35);
+}
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: var(--bg-dark);
+  box-shadow: 0 2px 10px var(--border-soft);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.leftheader img {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--violet-main);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.leftheader img:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 18px rgba(124, 58, 237, 0.75);
+}
+
+
+/* Right header */
+.rightheader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ================= SEARCH BOX ================= */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(180deg, var(--bg-dark-2), var(--bg-dark));
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  padding: 6px 10px;
+  width: 240px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.search-box input::placeholder {
+  color: #b9a7ff;
+}
+
+/* Icons inside search */
+.search-icon {
+  color: var(--violet-light);
+  font-size: 18px;
+}
+
+.cake-icon {
+  color: var(--violet-main);
+  font-size: 18px;
+}
+
+/* Focus effect */
+.search-box:focus-within {
+  border-color: var(--violet-main);
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.45);
+}
+
+/* ================= MENU ICON ================= */
+.menu {
+  color: var(--violet-light);
+  cursor: pointer;
+  font-size: 26px;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.menu:hover {
+  color: var(--violet-main);
+  transform: scale(1.1);
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: 260px;
+  background: linear-gradient(180deg, var(--bg-dark-2), var(--bg-dark));
+  padding: 25px 20px;
+  border-radius: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 150;
+}
+
+.sidebar.open {
+  opacity: 1;
+  pointer-events: auto;
+  box-shadow: -4px 0 25px rgba(124, 58, 237, 0.45);
+}
+
+/* Sidebar content */
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.sidebar ul li:hover {
+  background-color: rgba(124, 58, 237, 0.25);
+  transform: translateX(-4px);
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 768px) {
+
+  .header {
+    padding: 10px 15px;
+  }
+
+
+  .sidebar {
+    width: 240px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+
+
+  .sidebar {
+    width: 200px;
+    top: 60px;
+    border-radius: 0;
+  }
+
+  .sidebar ul li {
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+
+/* =========================== */
+/* =========================== */
+/* =========================== */
+/* =========================== */
+/* =========================== */
+
+
+
+:root {
+  --violet-dark: #1b0f2e;
+  --violet-mid: #2a1448;
+  --violet-accent: #7c3aed;
+  --text-light: #e9d5ff;
+}
+
+/* Footer Base */
+.footer {
+  background: linear-gradient(180deg, var(--violet-mid), var(--violet-dark));
+  color: var(--text-light);
+  padding: 40px 20px 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Layout */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Sections */
+.footer-section h2,
+.footer-section h4 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.footer-section p,
+.footer-section li {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-section ul li:hover {
+  color: var(--violet-accent);
+}
+
+/* Brand */
+.brand h2 {
+  font-size: 22px;
+  color: var(--violet-accent);
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+}
+
+.social-icons svg {
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons svg:hover {
+  transform: scale(1.15);
+  color: var(--violet-accent);
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 12px;
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+
+
+/* =========================== */
+/* =========================== */
+/* =========================== */
+/* =========================== */
+/* =========================== */
+
+
+/* ========== BODY WRAPPER ========== */
+.body {
+  background-color: white;
+  /* background-color: var(--bg-dark); */
+  /* color: var(--text-light); */
+  min-height: 100vh;
+}
+
+
+
+/* =========================== */
+/* =========================== */
+/* =========================== */
+/* =========================== */
+/* =========================== */
+
+/* ========== HOME / HERO SECTION ========== */
+.home {
+  height: 90vh;
+  width: 100%;
+  /* height: calc(100vh - 70px); header height safe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden;
+  position: relative; */
+}
+.home div{
+  height: 80%;
+  /* width: 100%; */
+  border-radius: 20px;
+}
+.home img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  /* border-bottom: 2px solid rgba(124, 58, 237, 0.4); */
+  /* filter: brightness(0.5); */
+  border-radius: 20px;
+
+}
+
+/* Hover effect on image */
+.image img:hover {
+  filter: brightness(0.6) drop-shadow(0 0 10px rgba(124, 58, 237, 0.6));
+  transform: scale(1.05); /* optional zoom */
+}
+
+/* Dark violet overlay for theme consistency */
+.home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(
+    to right,
+    rgba(15, 10, 31, 0.65),
+    rgba(124, 58, 237, 0.25)
+  ); */
+}
+
+/* ========== COMMON SECTION STYLE ========== */
+.cakes,
+.customcakes,
+.contact {
+  padding: 80px 8%;
+  position: relative;
+}
+
+/* Section titles (use h2 inside divs later) */
+.cakes h2,
+.customcakes h2,
+.contact h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--violet-light);
+}
+
+/* Soft divider */
+.cakes::before,
+.customcakes::before,
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--violet-main),
+    transparent
+  );
+}
+
+/* ========== CAKES SECTION ========== */
+.cakes {
+  background-color: var(--bg-dark-2);
+}
+
+/* ========== CUSTOM CAKES SECTION ========== */
+.customcakes {
+  background: linear-gradient(
+    180deg,
+    var(--bg-dark),
+    var(--bg-dark-2)
+  );
+}
+
+/* ========== CONTACT SECTION ========== */
+.contact {
+  background-color: var(--bg-dark);
+  border-top: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .home {
+    height: 70vh;
+  }
+
+  .cakes,
+  .customcakes,
+  .contact {
+    padding: 60px 6%;
+  }
+
+  .cakes h2,
+  .customcakes h2,
+  .contact h2 {
+    font-size: 26px;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .home {
+    height: 40vh;
+  }
+
+  .cakes,
+  .customcakes,
+  .contact {
+    padding: 50px 5%;
+  }
+
+  .cakes h2,
+  .customcakes h2,
+  .contact h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
